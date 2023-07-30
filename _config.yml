@@ -22,9 +22,6 @@
 # Head settings
 title: ML in PL Research Platform
 email: contact@mlinpl.org
-event-date: "2023-10-26T00:00:00"
-description: >-
-  ML in PL Conference 2023 is an event focused on the best of Machine Learning both in academia and in business.
 main-image: images/mlinpl-conference-2023-logo-black.png
 twitter-username: "@MLinPL"
 baseurl: "/research-platform" # the subpath of your site, e.g. /blog
@@ -35,7 +32,7 @@ author:
 
 
 # Header settings
-inline-logo: '<span class="logo"><span class="main-name">ML <span class="emph">i</span>n PL</span> <span class="sub-name">Conference 2023</span></span>'
+inline-logo: '<span class="logo"><span class="main-name">ML <span class="emph">i</span>n PL</span> <span class="sub-name">Research platform</span></span>'
 header:
   heading: '<img src="images/mlinpl-conference-2023-logo-black.png" style="max-height: 1.5em; max-width: 90%;">'
   date-location: 26 - 29 October / Warsaw, Poland
@@ -47,32 +44,16 @@ header:
 navigation:
   - name: "/ About"
     url: "#about"
-    subsites: 
-      - name: "/ More about the event"
-        url: "/about"
+  - name: "/ Labs"
+    url: "#labs"
+  - name: "/ Projects"
+    url: "#projects"
 
-  - name: "/ Program"
-    url: "#speakers"
-    subsites:
-      - name: "/ Call for Contributions"
-        url: "/call-for-contributions"
-      - name: "/ Invited speakers"
-        url: "#invited-speakers"
-
-  - name: "/ Timeline"
-    url: "#timeline"
-
-  - name: "/ Sponsors & partners"
-    url: "#sponsors"
-
-  - name: "/ Organizers"
-    url: "#organizers"
-    subsites:
-      - name: "/ Scientific Board"
-        url: "#scientific_board"
-      - name: "/ Contact"
-        url: "#contact"    
-
+collections:
+  labs:
+    output: true
+  projects:
+    output: true
 
 # Defaults for different pages
 defaults:
@@ -80,6 +61,16 @@ defaults:
       path: ""
     values:
       image: /images/mlinpl-conference-2023-event-banner.jpg
+  - scope:
+      path: ""
+      type: "labs"
+    values:
+      layout: "lab"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
 
 
 # Colors and styles settings

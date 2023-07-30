@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>{{ page.name }}</h1>
+<h2>{{ page.contact }}</h2>
+{{content}}
+{% assign filtered_projects = site.projects | where: 'lab_name', page.name %}
+{% for project in filtered_projects %}
+<li><a href="{{ project.url | relative_url }}">{{ project.name }}</a></li>
+{% endfor %}
+</body>
+</html>

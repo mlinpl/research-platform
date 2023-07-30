@@ -1,0 +1,10 @@
+<section id="projects" class="container content-section">
+    <h2>/ Projects</h2>
+    {% for project in site.projects %}
+    <li>
+        <h2><a href="{{ project.url | relative_url }}">{{ project.name }}</a></h2>
+        <h3>{{ project.contact }}</h3>
+        <p>{{ project.content | markdownify }}</p>
+    </li>
+    {% endfor %}
+</section>

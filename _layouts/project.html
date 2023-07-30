@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>{{ page.name }}</h1>
+<h2>{{ page.contact }}</h2>
+{{content}}
+{% for position in page.positions %}
+<li>
+    <h2>{{ position.name }}</h2>
+    <h3>{{ position.deadline }}</h3>
+    <p>{{ position.description }}</p>
+</li>
+{% endfor %}
+{% assign lab = site.labs | where: 'name', page.lab_name | first %}
+{% if lab %}
+- <a href="{{ lab.url | relative_url }}">{{ lab.name }}</a>
+{% endif %}
+</body>
+</html>
