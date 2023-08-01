@@ -929,3 +929,7 @@ body {
     animation: fadeOutToRight 0.5s forwards;
     animation-fill-mode: forwards;
 }
+
+.comma:not(:empty):not(:last-child):after {
+    content: ", ";
+}

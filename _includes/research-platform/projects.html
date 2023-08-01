@@ -1,10 +1,19 @@
 <section id="projects" class="container content-section">
     <h2>/ Projects</h2>
     {% for project in site.projects %}
-    <li>
+    <div class="col-lg-12">
         <h2><a href="{{ project.url | relative_url }}">{{ project.name }}</a></h2>
-        <h3>{{ project.contact }}</h3>
+        <h3>{{ project.leader }} ({{ project.contact }})</h3>
+        <p><b>Deadline: </b>{{ project.deadline }}</p>
         <p>{{ project.content | markdownify }}</p>
-    </li>
+        {% if project.positions.size != 0 %}
+        <p>
+            <b>Available positions:</b>
+            {% for position in project.positions %}
+            <span class="comma">{{ position.name }}</span>
+            {% endfor %}
+        </p>
+        {% endif %}
+    </div>
     {% endfor %}
 </section>

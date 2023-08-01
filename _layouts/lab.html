@@ -2,14 +2,25 @@
 <html lang="en">
 {% include head.html %}
 <body>
-<h1>{{ page.name }}</h1>
-<h2>{{ page.contact }}</h2>
-{{content}}
-{% assign filtered_projects = site.projects | where: 'lab_name', page.name %}
-{% for project in filtered_projects %}
-<li>
+{% if page.logo %}
+<div class="details-image col-md-4">
+    <img src="{{ page.logo | relative_url }}" alt="{{page.name}} logo" class="person-photo width-100 width-max-400px">
+</div>
+{% endif %}
+<div class="details-text col-md-8">
+    <h2>{{ page.name }}</h2>
+    <h3>Head: {{ page.head }}</h3>
+    {{content | markdownify}}
+    <p>Contact: {{ page.contact }}</p>
+    <p>Address: {{ page.address }}</p>
+    <p>Website: {{ page.website_link }}</p>
+    {% assign filtered_projects = site.projects | where: 'lab_name', page.name %}
+    {% if filtered_projects.size != 0 %}
+    <h2>Lab projects:</h2>
+    {% for project in filtered_projects %}
     <a href="{{ project.url | relative_url }}">{{ project.name }}</a>
-</li>
-{% endfor %}
+    {% endfor %}
+    {% endif %}
+</div>
 </body>
 </html>

@@ -44,10 +44,10 @@ header:
 navigation:
   - name: "/ About"
     url: "#about"
-  - name: "/ Labs"
-    url: "#labs"
   - name: "/ Projects"
     url: "#projects"
+  - name: "/ Labs"
+    url: "#labs"
 
 collections:
   labs:
