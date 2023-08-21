@@ -1,19 +1,49 @@
 <section id="labs" class="container content-section">
     <h2>/ Labs</h2>
+
     {% for lab in site.labs %}
-    <div class="col-lg-12">
-        {% if lab.logo %}
-        <div class="details-image col-md-4">
-            <img src="{{ lab.logo | relative_url }}" alt="{{lab.name}} logo"
-                 class="person-photo width-100 width-max-400px">
+    <div class="lab">
+        <div class="col-md-12 col-lg-12 research-lab-entry">
+            {% unless forloop.first %}
+                <hr size="30" class="research-division" >
+            {% endunless %}
+            <div class="visible-md visible-lg visible-xl visible-lg">
+                <div class="research-lab-text col-md-9 col-lg-9">
+                    <h2><a href="{{ lab.url | relative_url }}">{{ lab.name }}</a></h2>
+                    <h3 class="research-lab-head">Head: {{ lab.head }}</h3>
+                </div>
+                {% if lab.logo %}
+                <div class="col-md-3 col-lg-3">
+                    <img src="{{ lab.logo | relative_url }}" alt="{{lab.name}} logo"
+                        class="research-lab-image width-100 width-max-400px">
+                </div>
+                {% endif %}
+                <div class="details-text col-md-12 col-lg-12">
+                    <p>{{ lab.content | markdownify }}</p>
+                    <p><b>Contact:</b> {{ lab.contact }}</p>
+                </div>
+            </div>
+
+            <div class="visible-xs visible-sm">
+                {% if lab.logo %}
+                <div class="col-md-3 col-lg-3 text-center">
+                    <img src="{{ lab.logo | relative_url }}" alt="{{lab.name}} logo"
+                        class="research-lab-image width-100 width-max-400px">
+                </div>
+                {% endif %}
+                <div class="research-lab-text col-md-9 col-lg-9">
+                    <h2><a href="{{ lab.url | relative_url }}">{{ lab.name }}</a></h2>
+                    <h3 class="research-lab-head">Head: {{ lab.head }}</h3>
+                </div>
+                <div class="research-lab-contact col-sm-12 col-md-12 col-lg-12">
+                    <p>{{ lab.content | markdownify }}</p>
+                    <p><b>Contact:</b> {{ lab.contact }}</p>
+                </div>
+            </div>
         </div>
-        {% endif %}
-        <div class="details-text col-md-8">
-            <h2><a href="{{ lab.url | relative_url }}">{{ lab.name }}</a></h2>
-            <h3>Head: {{ lab.head }}</h3>
-            <p>{{ lab.content | markdownify }}</p>
-            <p>Contact: {{ lab.contact }}</p>
-        </div>
+        
     </div>
+
     {% endfor %}
+
 </section>

@@ -2,18 +2,21 @@
     <h2>/ Projects</h2>
     {% for project in site.projects %}
     <div class="col-lg-12">
+        {% unless forloop.first %}
+            <hr class="research-division">
+        {% endunless %}
         <h2><a href="{{ project.url | relative_url }}">{{ project.name }}</a></h2>
-        <h3>{{ project.leader }} ({{ project.contact }})</h3>
-        <p><b>Deadline: </b>{{ project.deadline }}</p>
-        <p>{{ project.content | markdownify }}</p>
-        {% if project.positions.size != 0 %}
-        <p>
+        <h4 class="research-project-leader">{{ project.leader }} ({{ project.contact }})</h4>
+        <p class="research-project-content">{{ project.content | markdownify }}</p>
+        {% if project.positions %}
+        <p class="research-project-positions">
             <b>Available positions:</b>
             {% for position in project.positions %}
             <span class="comma">{{ position.name }}</span>
             {% endfor %}
         </p>
         {% endif %}
+        <p><b>Deadline: </b>{{ project.deadline }}</p>
     </div>
     {% endfor %}
 </section>
