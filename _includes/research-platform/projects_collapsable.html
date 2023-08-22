@@ -1,0 +1,39 @@
+<section id="projects" class="container content-section">
+    <h2>/ Projects</h2>
+    <div id="accordion">
+        {% for project in site.projects %}
+        <div class="col-lg-12">
+            <div class="card">
+                {% unless forloop.first %}
+                    <hr class="research-division">
+                {% endunless %}
+                <div class="card-header research-project-name" id="heading{{forloop.index}}">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{forloop.index}}" aria-expanded="true" aria-controls="collapse{{forloop.index}}">
+                        <h2>{{ project.name }}</h2>
+                    </button>
+                </div>
+                <div id="collapse{{forloop.index}}" class="collapse show research-project-body" aria-labelledby="heading{{forloop.index}}" style="height: 0px; margin-left: 25px;" data-parent="#accordion">
+                    <div class="card-body">
+                        <h4 class="research-project-leader">{{ project.leader }} ({{ project.contact }})</h4>
+                        <p class="research-project-content">{{ project.content | markdownify }}</p>
+                        <p class="research-project-details"><a href="{{ project.url | relative_url }}">More details</a></p>
+
+                        {% if project.positions %}
+                        <p class="research-project-positions">
+                        <b>Available positions:</b>
+                        {% for position in project.positions %}
+                        <span class="comma">{{ position.name }}</span>
+                        {% endfor %}
+                        </p>
+                        {% endif %}
+                        <p><b>Deadline: </b>{{ project.deadline }}</p>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

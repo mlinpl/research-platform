@@ -34,10 +34,11 @@ author:
 # Header settings
 inline-logo: '<span class="logo"><span class="main-name">ML <span class="emph">i</span>n PL</span> <span class="sub-name">Research platform</span></span>'
 header:
-  heading: '<img src="images/mlinpl-conference-2023-logo-black.png" style="max-height: 1.5em; max-width: 90%;">'
+  heading: '<img src="images/mlinpl-logo-black.png" style="max-height: 1.5em; max-width: 90%;">'
   date-location: 26 - 29 October / Warsaw, Poland
   # Countdown settings
   countdown-date: "2023-10-26T00:00:00"
+  subheading: "Platform connecting students with research labs"
 
 
 # Navigation settings
