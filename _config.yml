@@ -32,13 +32,10 @@ author:
 
 
 # Header settings
-inline-logo: '<span class="logo"><span class="main-name">ML <span class="emph">i</span>n PL</span> <span class="sub-name">Research platform</span></span>'
+inline-logo: '<span class="logo"><span class="main-name">ML in PL</span> <span class="sub-name">Research Platform</span></span>'
 header:
-  heading: '<img src="images/mlinpl-logo-black.png" style="max-height: 1.5em; max-width: 90%;">'
-  date-location: 26 - 29 October / Warsaw, Poland
-  # Countdown settings
-  countdown-date: "2023-10-26T00:00:00"
-  subheading: "Platform connecting students with research labs"
+  heading: '<img src="images/mlinpl-research-platform.png" style="max-height: 1.5em; max-width: 90%;">'
+  subheading: 'Platform connecting <span class="emph"><i class="fa-solid fa-user-graduate"></i> students</span> with <span class="emph"><i class="fa-solid fa-flask"></i> research labs</span> '
 
 
 # Navigation settings

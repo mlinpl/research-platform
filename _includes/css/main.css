@@ -26,9 +26,10 @@
 }
 
 .event-heading {
-    margin-top: 1.5em;
-    font-size: 3.5em;
+    margin-top: 0.5em;
+    font-size: 2.5em;
     margin-bottom: 5px;
+    margin-bottom: 0.25em;
 }
 
 .event-subheading {
@@ -42,8 +43,8 @@
 
 @media(min-width:767px) {
     .event-heading {
-        margin-top: 2em;
-        font-size: 7em;
+        margin-top: 1em;
+        font-size: 5em;
     }
 
     .page-heading {
@@ -279,7 +280,15 @@ ol > li > ol > li > ol > li:before {
     transition: background .3s ease-in-out;
 }
 
+.navbar-header {
+    transition: opacity .5s ease-in-out,padding .5s ease-in-out;
+}
+
 @media(min-width:767px) {
+    .navbar-header {
+        opacity: 0;
+    }
+
     .navbar {
         padding: 20px 0;
         border-bottom: 0;
@@ -293,6 +302,11 @@ ol > li > ol > li > ol > li:before {
     .top-nav-collapse {
         padding: 0;
         background-color: {{ site.color.background }};
+    }
+
+    .top-nav-collapse .navbar-header {
+        opacity: 1;
+        transition: opacity .5s ease-in-out,padding .5s ease-in-out;
     }
 
     .navbar-custom.top-nav-collapse {
@@ -336,8 +350,9 @@ ol > li > ol > li > ol > li:before {
 .intro, .page-intro {
     display: table;
     width: 100%;
-    height: auto;
-    padding: 100px 0;
+    height: 400px;
+    /* padding: 50px 0; */
+    margin-bottom: -150px;
     text-align: center;
     color: #000;
     background-color: {{ site.color.background }};
@@ -349,8 +364,10 @@ ol > li > ol > li > ol > li:before {
     display: table-cell;
     vertical-align: middle;
     /*background: radial-gradient(circle, rgba(255,255,255,1) 25%, rgba(255,255,255,0) 75%); */
-    background: radial-gradient(farthest-side at 50% 75%, rgb(255, 255, 255, 1) 50%, rgba(255,255,255,0) 100%);
+    /* background: radial-gradient(farthest-side at 50% 75%, rgb(255, 255, 255, 1) 50%, rgba(255,255,255,0) 100%); */
     position: relative;
+    box-shadow: inset 0px 0px 25px 25px #fff;
+    height: 400px;
 }
 
 .intro .intro-body .brand-heading {
@@ -361,17 +378,7 @@ ol > li > ol > li > ol > li:before {
     font-size: 18px;
 }
 
-.page-intro {
-    height: 400px !important;
-    margin-bottom: -150px;
-}
-
 @media(min-width:767px) {
-    .intro {
-        height: 100%;
-        padding: 0;
-    }
-
     .intro .intro-body .brand-heading {
         font-size: 100px;
     }
