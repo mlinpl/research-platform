@@ -3,7 +3,7 @@ name: Example project ML in PL
 leader: Samantha Williams
 contact: s.williams@el.com
 lab_name: Example Lab ML in PL
-deadline: 25.03.2024
+deadline: 05.09.2023
 ---
 
 The "Federated Learning for Privacy-Preserving Healthcare Analytics" project at the Advanced Machine Learning Lab aims

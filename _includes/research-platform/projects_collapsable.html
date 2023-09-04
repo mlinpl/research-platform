@@ -2,6 +2,10 @@
     <h2>/ Projects</h2>
     <div id="accordion">
         {% for project in site.projects %}
+        {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
+        {% assign day = 1 | times: 24 | times: 60 | times: 60 %}
+        {% capture deadline %}{{project.deadline | date: '%s' | plus: day}}{% endcapture %}
+        {% if deadline >= nowunix %}
         <div class="col-lg-12">
             <div class="card">
                 {% unless forloop.first %}
@@ -34,6 +38,7 @@
                 </div>
             </div>
         </div>
+        {% endif %}
         {% endfor %}
     </div>
 </section>
