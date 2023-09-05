@@ -100,7 +100,7 @@ function updateParticle(p){
     let prevSinVal = Math.sin(p.x / p.freq) * p.amp;
     p.x += p.velX;
     let nextSinVal = Math.sin(p.x / p.freq) * p.amp;
-    p.y += p.velY; //* (prevSinVal - nextSinVal);
+    p.y += p.velY * (prevSinVal - nextSinVal);
 
     // Wrap around the left and right
     if(p.x < -connectionDistanceThreshold) p.x = width + connectionDistanceThreshold; 
@@ -194,7 +194,7 @@ function createParticles(x, y, width, height, particlesCfg) {
     for(let i = 0; i < newParticlesCount; i++){
         newParticles.push({
             x: Math.random() * (width + 2 * connectionDistanceThreshold) + x - connectionDistanceThreshold,
-            y: gaussianRandom(0, 1) * 1 / 2 * height + y,
+            y: gaussianRandom(0, 1) * 2/3 * height + y,
             velX: (Math.random() * 2 - 1) * particlesCfg.speedMax,
             velY: (Math.random() * 2 - 1) * particlesCfg.speedMax,
             freq: Math.random() * 100 + 100,
