@@ -19,13 +19,13 @@ let then = 0,
     connectionDistanceThreshold = 125,
     backgroundColor = "{{ site.color.background }}",
     bgParticlesCfg = {
-        colors: "#EEE",
-        lineColors: "#EEE",
+        colors: "#DDD",
+        lineColors: "#DDD",
         sizeMin: 4,
         sizeRange: 3,
         speedMax: 0.4,
         groups: [[0, 1], [0, 2], [1, 2]],
-        density: 0.00015
+        density: 0.0002
     },
     mgParticlesCfg = {
         colors: "#AAA",
@@ -34,16 +34,16 @@ let then = 0,
         sizeRange: 2,
         speedMax: 0.6,
         groups: [[]], // This group of particles has no connecting lines
-        density: 0.00015
+        density: 0.0002
     },
     fgParticlesCfg = {
-        colors: {"{{ site.color.main }}": 0.2, "#000000": 0.8},
-        lineColors: {"#000": 0.3, "#222": 0.3, "#444": 0.3},
+        colors: {"{{ site.color.main }}": 0.3, "#222": 0.3, "#666": 0.4},
+        lineColors: {"#222": 0.3, "#444": 0.3, "#666": 0.3},
         sizeMin: 2,
         sizeRange: 5,
         speedMax: 0.8,
         groups: [[0, 1], [0, 2], [0, 3], [0, 4], [1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4], [0], [1], [2], [3], [4], [0], [1], [2], [3], [4]],
-        density: 0.0003
+        density: 0.0004
     };
 
 // Helper functions
@@ -80,14 +80,14 @@ function wrappedDistVec2d(vec1, vec2){
     return dist;
 }
 
-function drawParticle(p){
+function drawParticle(ctx, p){
     ctx.fillStyle = p.color;
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.size, 0, 2 * Math.PI, false);
     ctx.fill();
 }
 
-function drawLine(p1, p2){
+function drawLine(ctx, p1, p2){
     ctx.beginPath();
     ctx.moveTo(p1.x, p1.y);
     ctx.lineTo(p2.x, p2.y);
@@ -108,7 +108,7 @@ function updateParticle(p){
     if(p.y + p.size >= height) p.velY *= -1;
 }
 
-function drawParticles(particles){
+function drawParticles(ctx, particles){
     // Update position of particles
     for (let p of particles) updateParticle(p);
 
@@ -126,7 +126,7 @@ function drawParticles(particles){
 
             for (let g of p1.groups){  
                 if (p2.groups.includes(g)){
-                    drawLine(p1, p2);
+                    drawLine(ctx, p1, p2);
                     break;
                 }
             }
@@ -134,16 +134,56 @@ function drawParticles(particles){
     }
 
     // Draw all particles
-    for (let p of particles) drawParticle(p);
+    for (let p of particles) drawParticle(ctx, p);
+}
+
+var imgMap = new Image;
+imgMap.src = "./images/misc/countries-of-europe.png";
+
+var imgMapStroke = new Image;
+imgMapStroke.src = "./images/misc/countries-of-europe-stroke.png";
+
+function createOffscreenCanvas(width, height){
+    let canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    return canvas;
 }
     
 function draw(){
     ctx.fillStyle = backgroundColor;
-    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    ctx.fillRect(0, 0, width, height);
 
-    drawParticles(bgParticles);
-    drawParticles(mgParticles);
-    drawParticles(fgParticles);
+    drawParticles(ctx, bgParticles);
+
+    let helperCanvas = createOffscreenCanvas(width, height),
+        helperCtx = helperCanvas.getContext("2d");
+
+    // Draw right, fit
+    // let imgH = imgMap.height,
+    //     imgW = imgMap.width,
+    //     ratio = height / imgMap.height,
+    //     drawImgH = imgH * ratio,
+    //     drawImgW = imgW * ratio;
+    // ctx.drawImage(imgMap, 0, 0, imgW, imgH, width - drawImgW, 0, drawImgW, drawImgH);
+
+    // Draw right, croped
+    let imgH = imgMap.height,
+        imgW = imgMap.width,
+        ratio = width / 2 / imgMap.width,
+        drawImgH = imgH * ratio,
+        drawImgW = imgW * ratio;
+    
+    helperCtx.fillStyle = "#EEE";
+    helperCtx.fillRect(0, 0, width, height);
+
+    helperCtx.drawImage(imgMapStroke, 0, 0, imgW, imgH, width - drawImgW, height / 2 - drawImgH / 2, drawImgW, drawImgH);
+    drawParticles(helperCtx, mgParticles);
+    drawParticles(helperCtx, fgParticles);
+    
+    helperCtx.globalCompositeOperation = 'destination-in';
+    helperCtx.drawImage(imgMap, 0, 0, imgW, imgH, width - drawImgW, height / 2 - drawImgH / 2, drawImgW, drawImgH);
+    ctx.drawImage(helperCanvas, 0, 0);
 }
     
 function createParticles(x, y, width, height, particlesCfg) {
@@ -154,9 +194,9 @@ function createParticles(x, y, width, height, particlesCfg) {
     for(let i = 0; i < newParticlesCount; i++){
         newParticles.push({
             x: Math.random() * (width + 2 * connectionDistanceThreshold) + x - connectionDistanceThreshold,
-            y: gaussianRandom(0, 1) * 1 / 3 * height + y,
+            y: gaussianRandom(0, 1) * 2/3 * height + y,
             velX: (Math.random() * 2 - 1) * particlesCfg.speedMax,
-            velY: 1,
+            velY: (Math.random() * 2 - 1) * particlesCfg.speedMax,
             freq: Math.random() * 100 + 100,
             amp: Math.random() * 100,
             size: Math.random() * particlesCfg.sizeRange + particlesCfg.sizeMin,
