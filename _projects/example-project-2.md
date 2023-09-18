@@ -3,6 +3,10 @@ name: Example project ML in PL
 leader: Samantha Williams
 contact: s.williams@el.com
 lab_name: Example Lab ML in PL
+location: Warsaw
+remote: Yes
+funded: Yes
+hours: 20
 deadline: 25.03.2024
 ---
 
