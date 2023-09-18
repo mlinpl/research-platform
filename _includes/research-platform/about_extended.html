@@ -1,0 +1,173 @@
+<section class="container content-section">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>/ What is {{ page.mlinpl-inline-logo }}?</h2>
+            <p  class="research-about-text">
+                The Research Platform, an online hub, aims to connect students and research leaders in ML/AI. 
+                Students can discover research labs with projects suited to their interests, while research 
+                leaders showcase their work and offer collaboration opportunities. The platform fosters collaboration
+                and increases accessibility to research opportunities for students, ultimately driving innovation
+                and creating a positive impact in the field of machine learning and beyond.
+                Are you the research leader, and you want to add your project on our website? Great! 
+                Please follow our two-step registration process:
+            </p>
+            <ul>
+                <li><strong><a href="https://mlinpl-research-group-registration.paperform.co/">Register a Research Group:</a></strong> start by registering your research group or lab. This provides students with insight into the broader objectives and ethos of your group.</li>
+                <li><strong><a href="https://mlinpl-research-project-registration.paperform.co/">Register a Research Project:</a></strong> once your group is established, showcase the specific projects you're undertaking and invite collaboration. Following this sequence offers potential collaborators a holistic view of your initiatives.</li>
+             </ul>
+             <p>We are looking forward for your submissions!</p>
+            </p>
+        </div>
+    </div>
+        </div>
+    </div>
+</section>
+
+<section class="container content-section">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>/ Motivation</h2>
+            <p>
+                The burgeoning field of machine learning has witnessed an upsurge in ambitious students
+                eager to contribute and innovate. These students, brimming with potential and drive,
+                often find themselves at crossroads, looking for the right research opportunities to propel their careers forward. On the flip side, research labs, which are the nexus of groundbreaking work, often find themselves in need of skilled and passionate individuals to drive their research endeavors.
+                However, a palpable gap exists. Many students remain unaware of the myriad of
+                opportunities that lie before them, especially before they dive into PhD programs. 
+                This lack of awareness stems from the absence of a unified platform where they can discover these opportunities.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <!-- student.png -->
+        <div class="col-md-4">
+            <img class="width-100 width-max-400px" src="{{ './images/rp/students.png' | relative_url }}" alt="Student Image Description">
+            <p class="text-center">Ambitious students available</p>
+        </div>
+    
+        <!-- lab.png -->
+        <div class="col-md-4">
+            <img class="width-100 width-max-400px" src="{{ './images/rp/labs_needs_human_power.png' | relative_url }}" alt="Lab Image Description">
+            <p class="text-center">Research lab need human power</p>
+        </div>
+    
+        <!-- lack_of_awareness.png -->
+        <div class="col-md-4">
+            <img class="width-100 width-max-400px" src="{{ './images/rp/lack_of_aweraness.png' | relative_url }}" alt="Lack of Awareness Image Description">
+            <p class="text-center">Lack of awareness before PhD programs</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <img class="width-100 width-max-400px centered" src="{{ './images/mlinpl-research-platform.png' | relative_url }}" alt="Logo Description">
+            <p class="text-center" style="margin-top: 20px;">Need for standard platform </p>
+        </div>
+    </div> 
+</section>
+
+<section class="container content-section">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>/ Research Group Locations</h2>
+            <p>There are a total of 1 labs and 2 projects</p>
+            <div id="summaryText"></div>
+            <!-- Map Container -->
+            <div id="researchGroupsMap" style="width: 100%; height: 800px;"></div>
+        </div>
+    </div>
+</section>
+
+<section class="container content-section">
+    <div class="row">
+        <!-- Values column -->
+        <div class="col-xs-12 col-md-6">
+            <h2>/ Values</h2>
+            <ul>
+                <li>Collaborating for Progress</li>
+                <li>Making Opportunities Accessible</li>
+                <li>Empowering future AI pioneers</li>
+            </ul>
+        </div>
+        
+        <!-- Contact column -->
+        <div class="col-xs-12 col-md-6">
+            <h2>/ Contact</h2>
+            <p>
+                If you have any question about the Research Platform, don't hesitate to contact us by email: 
+                <a href="mailto:{{ site.email }}" class="main-color">{{ site.email }}</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="container content-section">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>/ Organizers - ML in PL Association</h2>
+        </div>  
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <p>
+                ML in PL Association is a non-profit organization set up by students from Poland that wanted to have 
+                a world-class machine learning conference in their country, so they decided to organize it themselves.
+                The association consists of a group of volunteers, mostly undergrad, graduate, and PhD students, 
+                that are devoted to fostering the machine learning community in Poland and Europe 
+                and promoting a deep understanding of machine learning. 
+            </p>
+        </div>
+        <div class="col-md-4 text-center" style="margin-bottom: 35px;">
+            <a href="https://mlinpl.org"><img class="width-100 width-max-400px" src="{{ "./images/mlinpl-logo-black.png" | relative_url }}"></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <p>
+                Check all our activities and initiatives on our <a href="https://mlinpl.org/">website</a>.
+            </p>
+        </div>
+    </div>
+</section>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+    // Initialize the map centered on a central point in Poland
+    var map = L.map('researchGroupsMap').setView([52.0690, 19.4803], 6.2); 
+
+    // Set the base map layer to Stamen's Toner tiles
+    L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
+        subdomains: 'abcd',
+        minZoom: 0,
+        maxZoom: 20,
+        ext: 'png'
+    }).addTo(map);
+
+    // An array of research groups with their details
+    var researchGroups = [
+        {
+            coordinates: [52.2297, 21.0122],
+            name: 'Example Lab ML in PL',
+            description: 'Head: Samantha Williams',
+            link: '{{ "./labs/example-lab" | relative_url }}',
+            iconUrl: '{{ "./lab-logo/example.jpg" | relative_url }}'
+        },
+    ];
+
+    researchGroups.forEach(function(group) {
+        var researchGroupIcon = L.divIcon({
+            className: 'custom-icon',
+            html: `<img src="${group.iconUrl}" style="border: 2px solid #e7322a; width: 30px; height: 30px;" />`,
+            iconSize: [40, 40],
+            iconAnchor: [15, 15],
+            popupAnchor: [0, -15]
+        });
+
+        var marker = L.marker(group.coordinates, { icon: researchGroupIcon }).addTo(map);
+        var popupContent = `<b><a href="${group.link}" target="_blank">${group.name}</a></b><br>${group.description}`;
+        marker.bindPopup(popupContent).openPopup();
+    });
+
+</script>

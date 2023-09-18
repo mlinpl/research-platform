@@ -21,7 +21,7 @@
 
 # Head settings
 title: ML in PL Research Platform
-email: contact@mlinpl.org
+email: research@mlinpl.org
 main-image: images/mlinpl-conference-2023-logo-black.png
 twitter-username: "@MLinPL"
 baseurl: "/research-platform" # the subpath of your site, e.g. /blog
@@ -46,6 +46,8 @@ navigation:
     url: "#projects"
   - name: "/ Labs"
     url: "#labs"
+  - name: "/ Tips"
+    url: "#tips"
 
 collections:
   labs:
