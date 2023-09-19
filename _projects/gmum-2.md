@@ -1,7 +1,7 @@
 ---
-name: Example project ML in PL
-leader: Samantha Williams
-contact: s.williams@el.com
+name: Differentiable splitting of batch
+leader: Marcin Sendera, Tomasz Kuśmierczyk
+contact: marcin.sendera@gmail.com
 positions:
   - name: Data Engineer
     description: We are looking for super data engineer
@@ -9,11 +9,13 @@ positions:
   - name: Data Analyst
     description: We are looking for super data analyst
     deadline: 25.03.2024
-lab_name: Example Lab ML in PL
-location: Poznań
-remote: No
-funded: No
-hours: 10
+lab_name: GMUM
+location: Cracow, Poland
+remote: no
+funding: yes
+weekly_hours: 10
+education_level: BSc - PhD student
+created: 2021-03-23
 deadline: 25.03.2024
 ---
 

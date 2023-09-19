@@ -4,7 +4,7 @@ name:  Advanced Machine Learning Lab
 head:  Michael Chen
 contact: m.chen@amll.com
 logo: ./lab-logo/amll.jpg
-website_link: https://conference2023.mlinpl.org/
+website_url: https://conference2023.mlinpl.org/
 address: Warsaw, Poland
 ---
 

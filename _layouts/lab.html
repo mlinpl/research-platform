@@ -19,30 +19,22 @@
 
             </div>
         </div>
-        <p>{{ page.content | markdownify }}</p>
+        {{ page.content | markdownify }}
         <p>
             <b>Contact:</b> {{ page.contact }}<br>
             <b>Address:</b> {{ page.address }}<br>
-            <b>Website:</b> <a href="{{ page.website_link }}">{{ page.website_link }}</a>
+            <b>Website:</b> <a href="{{ page.website_url }}">{{ page.website_url }}</a>
         </p>
-        {% assign filtered_projects = site.projects | where: 'lab_name', page.name %}
+        {% assign filtered_projects_by_name = site.projects | where: 'lab_name', page.name %}
+        {% assign filtered_projects_by_short_name = site.projects | where: 'lab_name', page.short_name %}
+        {% assign filtered_projects = (filtered_projects_by_name | concat: filtered_projects_by_short_name) %}
         {% if filtered_projects.size != 0 %}
-        <h3>Lab projects:</h3>
+        <h3>Lab's projects:</h3>
         <div id="accordion">
             {% for project in filtered_projects %}
-            {% include research-platform/project.html
-            url = project.url
-            name = project.name
-            contact = project.contact
-            leader = project.leader
-            lab = project.lab_name
-            positions = project.positions
-            content = project.content
-            funded = project.funded
-            location = project.location
-            funded = project.funded
-            hours = project.hours
-            remote = project.remote
+            {% include research-platform/project-card.html
+                project = project
+                make_collapsable = true
             %}
             {% endfor %}
         </div>

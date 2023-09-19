@@ -5,21 +5,12 @@
 {% include nav.html %}
 <section id="project" class="container content-section">
 <div class="col-lg-12">
-    {% include research-platform/project.html
-    name = page.name
-    deadline = page.deadline
-    contact = page.contact
-    leader = page.leader
-    lab = page.lab_name
-    positions = page.positions
-    content = page.content
-    funded = page.funded
-    location = page.location
-    funded = page.funded
-    hours = page.hours
-    remote = page.remote
+    {% include research-platform/project-card.html
+        project = page
+        make_collapsable = false
     %}
     <p class="research-project-content">{{ page.content | markdownify }}</p>
+    
     {% if page.positions %}
     <p class="research-project-positions">
         <b>Available positions:</b>
@@ -30,6 +21,9 @@
     {% endif %}
     <p>
         {% assign lab = site.labs | where: 'name', page.lab_name | first %}
+        {% if lab == nil %}
+        {% assign lab = site.labs | where: 'short_name', page.lab_name | first %}
+        {% endif %}
         {% if lab %}
             <h2>Project lab:</h2>
             <div class="card col-lg-12 col-md-12">

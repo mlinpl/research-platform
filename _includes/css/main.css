@@ -973,12 +973,27 @@ body {
     margin-left: -15px;
 }
 
-.research-project-body {
-    margin-top: -20px;
+.project-card-head {
+
 }
 
+.project-card-content {
+    border-top: 1px solid #ccc;
+    padding-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
 
+.project-info {
+    margin-bottom: 5px;
+}
 
+.project-property {
+    font-size: 0.8em;
+    display: inline-block;
+    white-space: nowrap;
+    padding-right: 30px;
+}
 
 @media (min-width: 992px) {
     .research-project-content {
