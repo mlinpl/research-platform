@@ -5,8 +5,20 @@
 {% include nav.html %}
 <section id="project" class="container content-section">
 <div class="col-lg-12">
-    <h2>{{ page.name }}</h2>
-    <h4 class="research-project-leader">{{ page.leader }} ({{ page.contact }})</h4>
+    {% include research-platform/project.html
+    name = page.name
+    deadline = page.deadline
+    contact = page.contact
+    leader = page.leader
+    lab = page.lab_name
+    positions = page.positions
+    content = page.content
+    funded = page.funded
+    location = page.location
+    funded = page.funded
+    hours = page.hours
+    remote = page.remote
+    %}
     <p class="research-project-content">{{ page.content | markdownify }}</p>
     {% if page.positions %}
     <p class="research-project-positions">
@@ -18,8 +30,27 @@
     {% endif %}
     <p>
         {% assign lab = site.labs | where: 'name', page.lab_name | first %}
-        {% if lab %} Project lab: <a href="{{ lab.url | relative_url }}">{{ lab.name }}</a></br>{% endif %}
-        <b>Deadline: </b>{{ page.deadline }}
+        {% if lab %}
+            <h2>Project lab:</h2>
+            <div class="card col-lg-12 col-md-12">
+                <div class="card-header" id="heading_lab{{forloop.index}}">
+                    <button disabled style = "text-align: left; background: transparent; outline: 0; border: 0px
+                        " >
+                        <div class="details-text col-lg-9 col-md-9">
+                            <h2><a href="{{ lab.url | relative_url }}">{{ lab.name }}</a></h2>
+                            <h3>Head: {{ lab.head }}</h3>
+                        </div>
+                        {% if lab.logo %}
+                        <div class="details-image col-lg-3 col-md-3" style="text-align: right">
+                            <img src="{{ lab.logo | relative_url }}" alt="{{lab.name}} logo"
+                                 class="person-photo width-100 width-max-100px">
+                        </div>
+                        {% endif %}
+                    </button>
+                </div>
+            </div>
+            <br>
+        {% endif %}
     </p>
 
 </div>

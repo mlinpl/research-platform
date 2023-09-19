@@ -10,6 +10,10 @@ positions:
     description: We are looking for super data analyst
     deadline: 25.03.2024
 lab_name: Example Lab ML in PL
+location: Poznań
+remote: No
+funded: No
+hours: 10
 deadline: 25.03.2024
 ---
 
