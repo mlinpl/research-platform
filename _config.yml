@@ -22,10 +22,10 @@
 # Head settings
 title: ML in PL Research Platform
 email: research@mlinpl.org
-main-image: images/mlinpl-conference-2023-logo-black.png
+main-image: images/mlinpl-research-platform.png
 twitter-username: "@MLinPL"
-baseurl: "/research-platform" # the subpath of your site, e.g. /blog
-url: "https://mlinpl.github.io/research-platform" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "research-platform.mlinpl.org" # the base hostname & protocol for your site, e.g. http://example.com
 author:
   name: ML in PL Association
   url: https://mlinpl.org
