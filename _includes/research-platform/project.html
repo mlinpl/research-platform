@@ -1,10 +1,18 @@
 <div class="">
     <div class="card col-lg-12 col-md-12 col-sm-12">
         <div class="card-header " id="heading{{forloop.index}}">
-            <button data-toggle="collapse" data-target="#collapse{{forloop.index}}" aria-expanded="true" aria-controls="collapse{{forloop.index}}" style = "text-align: left; background: transparent; outline: 0; border: 0px
+            {%if include.url %}
+                <button data-toggle="collapse" data-target="#collapse{{forloop.index}}" aria-expanded="true" aria-controls="collapse{{forloop.index}}" style = "text-align: left; background: transparent; outline: 0; border: 0px
             ">
-                <h2 class="col-lg-8 col-md-8 col-sm-12"><a href="{{ include.url | relative_url }}">{{ include.name }}</a></h2>
-            <p class="research-project-deadline col-lg-4 col-md-4 col-sm-12"><b>Deadline: </b>{{ project.deadline }}</p>
+            {% endif %}
+                <h2 class="col-lg-8 col-md-8 col-sm-12">
+                    {%if include.url %}
+                    <a href="{{ include.url | relative_url }}">{{ include.name }}</a>
+                    {% else %}
+                    {{ include.name }}
+                    {% endif %}
+                </h2>
+            <p class="research-project-deadline col-lg-4 col-md-4 col-sm-12"><b>Deadline: </b>{{ include.deadline }}</p>
             <h4 class="research-project-leader col-lg-12 col-md-12 col-sm-12">{{ include.lab}}</h4>
             
 
@@ -32,7 +40,9 @@
                 {% endif %}
                 <h5 class="research-project-info"> Weekly commitement: {{include.hours}}h </h5>
             </div>
-        </button>
+        {%if include.url %}
+            </button>
+        {% endif %}
         </div>
         <div id="collapse{{forloop.index}}" class="collapse show research-project-body" aria-labelledby="heading{{forloop.index}}" style="height: 0px; margin-left: 25px;" data-parent="#accordion">
             <div class="card-body">
