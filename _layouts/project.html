@@ -2,36 +2,38 @@
 <html lang="en">
 {% include head.html %}
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-{% include nav.html %}
+    {% include nav.html %}
 
-<section id="project" class="container content-section">
-<div class="row">
-<div class="col-lg-12">
-    <div>
-    {% include research-platform/project-card.html
-        project = page
-        make_collapsable = false
-    %}
-    </div>
-    
-    {{ page.content | markdownify }}
+    <section id="project" class="container content-section">
+    <div class="row">
+    <div class="col-lg-12">
+        <div>
+        {% include research-platform/project-card.html
+            project = page
+            make_collapsable = false
+        %}
+        </div>
+        
+        {{ page.content | markdownify }}
 
-    <p>
         {% assign lab = site.labs | where: 'name', page.lab_name | first %}
         {% if lab == nil %}
         {% assign lab = site.labs | where: 'short_name', page.lab_name | first %}
         {% endif %}
         {% if lab %}
             <h2>Project's lab:</h2>
+            <div id="labs-accordion">
             {% include research-platform/lab-card.html
                 lab = lab
                 make_collapsable = true
             %}
+            </div>
         {% endif %}
-    </p>
-</div>
-</div>
-</section>
-
+    </div>
+    </div>
+    </section>
+    
+    {% include footer.html %}
+    {% include js.html %}
 </body>
 </html>

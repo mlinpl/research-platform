@@ -91,7 +91,7 @@ Expects following parameters:
             {% endif %}
         </div>
         {% if make_collapsable == true %}
-        <div id="project-collapse-{{forloop.index}}" class="collapse show" aria-labelledby="project-heading-{{forloop.index}}" style="height: 0px;" data-parent="#project-accordion">
+        <div id="project-collapse-{{forloop.index}}" class="collapse show" aria-labelledby="project-heading-{{forloop.index}}" style="height: 0px;" data-parent="#projects-accordion">
             <div class="card-content">
                 {{ project.content | markdownify }}
                 <p><i class="fa-solid fa-address-book"></i> Contact: {{ project.leader }} ({{ project.contact | replace: "@", " [ at ] " }})</p>
