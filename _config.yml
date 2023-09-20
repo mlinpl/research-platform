@@ -40,14 +40,14 @@ header:
 
 # Navigation settings
 navigation:
-  - name: "/ About"
-    url: "#about"
   - name: "/ Projects"
     url: "#projects"
   - name: "/ Labs"
     url: "#labs"
+  - name: "/ About"
+    url: "/about"
   - name: "/ Tips for students"
-    url: "#tips-for-students"
+    url: "/tips-for-students"
 
 collections:
   labs:

@@ -1161,3 +1161,26 @@ body {
 .comma:not(:empty):not(:last-child):after {
     content: ", ";
 }
+
+.search-bar {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin-top: 60px;
+    margin-bottom: 35px;
+}
+
+.search-bar input, .search-bar .input-group-addon {
+    /* border: 2px solid {{ site.color.second }}; */
+    font-size: 24px !important;
+    border-radius: 0 !important;
+}
+
+.search-bar .input-group-addon {
+    padding: 0 15px !important;
+}
+
+.search-bar input:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: {{ site.color.main }};
+}
