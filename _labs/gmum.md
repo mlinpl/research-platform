@@ -1,6 +1,6 @@
 ---
 short_name: GMUM
-name: Group of Machine Learning Research
+title: Group of Machine Learning Research
 head: Samantha Williams
 contact: s.williams@el.com
 logo: ./lab-logo/gmum.png

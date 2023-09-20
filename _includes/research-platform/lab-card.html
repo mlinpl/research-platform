@@ -2,17 +2,27 @@
 Expects following parameters:
     lab
         .url
-        .name
+        .title
+        .full_name
         .short_name
         .content
         .location
+        .website_url
     make_collapsable
 {% endcomment %}
+
 {% assign lab = include.lab %}
 {% assign make_collapsable = include.make_collapsable | default: false %}
-{% assign filtered_projects_by_name = site.projects | where: 'lab_name', lab.name %}
+{% assign filtered_projects_by_name = site.projects | where: 'lab_name', lab.title %}
 {% assign filtered_projects_by_short_name = site.projects | where: 'lab_name', lab.short_name %}
 {% assign filtered_projects = (filtered_projects_by_name | concat: filtered_projects_by_short_name) %}
+
+{% if lab.full_name == nil %}
+    {% assign display_name = lab.title %}
+{% else %}
+    {% assign display_name = lab.full_name %}
+{% endif %}
+
     <div class="card">
         <div class="card-header" id="lab-heading-{{forloop.index}}">
             {% if make_collapsable == true %}
@@ -29,9 +39,9 @@ Expects following parameters:
             <div class="col-lg-9 col-md-9 col-sm-12">
                 <h3>
                     {% if lab.url and make_collapsable %}
-                    <a href="{{ lab.url | relative_url }}">{{ lab.name }}</a>
+                    <a href="{{ lab.url | relative_url }}">{{ display_name }}</a>
                     {% else %}
-                    {{ lab.name }}
+                    {{ display_name }}
                     {% endif %}
                 </h3>
                 <p class="card-info">

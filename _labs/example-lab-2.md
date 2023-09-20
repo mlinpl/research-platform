@@ -1,6 +1,7 @@
 ---
+title: Advanced Machine Learning Lab
 short_name:  Example lab 2
-name:  Advanced Machine Learning Lab
+full_name: Advanced Machine Learning Lab in Warsaw
 head:  Michael Chen
 contact: m.chen@amll.com
 logo: ./lab-logo/amll.jpg

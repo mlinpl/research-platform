@@ -48,6 +48,7 @@
 }
 
 .page-heading {
+    text-align: left;
     font-weight: bold; 
     font-size: 34px;
 }
@@ -358,17 +359,30 @@ ol > li > ol > li > ol > li:before {
     }
 }
 
+
 .intro, .page-intro {
     display: table;
     width: 100%;
-    height: 400px;
     /* padding: 50px 0; */
-    margin-bottom: -150px;
+    margin-bottom: -125px;
     text-align: center;
     color: #000;
     background-color: {{ site.color.background }};
     background-size: cover;
     position: relative;
+}
+
+.intro {
+    height: 400px;
+}
+
+.page-intro {
+    height: 250px;
+}
+
+.page-intro h1 {
+    margin-top: 25px;
+    margin-bottom: 0;
 }
 
 .intro .intro-body {
@@ -378,7 +392,6 @@ ol > li > ol > li > ol > li:before {
     /* background: radial-gradient(farthest-side at 50% 75%, rgb(255, 255, 255, 1) 50%, rgba(255,255,255,0) 100%); */
     position: relative;
     box-shadow: inset 0px 0px 25px 25px #fff;
-    height: 400px;
 }
 
 .intro .intro-body .brand-heading {

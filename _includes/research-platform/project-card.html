@@ -16,12 +16,14 @@ Expects following parameters:
         .remote
     make_collapsable
 {% endcomment %}
+
 {% assign project = include.project %}
 {% assign make_collapsable = include.make_collapsable | default: false %}
 {% assign lab = site.labs | where: 'short_name', project.lab_name | first %}
 {% if lab == nil %}
-{% assign lab = site.labs | where: 'name', project.lab_name | first %}
+    {% assign lab = site.labs | where: 'name', project.lab_name | first %}
 {% endif %}
+
     <div class="card">
         <div class="card-header" id="project-heading-{{forloop.index}}">
             {% if make_collapsable == true %}
@@ -38,9 +40,9 @@ Expects following parameters:
             <div class="col-lg-9 col-md-9 col-sm-12">
                 <h3>
                     {% if project.url and make_collapsable %}
-                    <a href="{{ project.url | relative_url }}">{{ project.name }}</a>
+                    <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
                     {% else %}
-                    {{ project.name }}
+                    {{ project.title }}
                     {% endif %}
                 </h3>
                 <p class="card-info">

@@ -1,6 +1,6 @@
 ---
 short_name: Example Lab
-name: Example Lab ML in PL
+title: Example Lab ML in PL
 head: Samantha Williams
 contact: s.williams@el.com
 logo: ./lab-logo/example.jpg

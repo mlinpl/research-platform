@@ -1,5 +1,5 @@
 ---
-name: Extended Gaussian Processes in Meta-Learning (few-shot regression)
+title: Extended Gaussian Processes in Meta-Learning (few-shot regression)
 leader: Marcin Sendera, Tomasz Kuśmierczyk
 contact: marcin.sendera@gmail.com
 positions:

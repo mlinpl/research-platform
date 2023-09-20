@@ -3,6 +3,7 @@
 {% include head.html %}
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     {% include nav.html %}
+    {% include page-header.html title = 'Project' %}
 
     <section id="project" class="container content-section">
     <div class="row">
@@ -16,7 +17,7 @@
         
         {{ page.content | markdownify }}
 
-        {% assign lab = site.labs | where: 'name', page.lab_name | first %}
+        {% assign lab = site.labs | where: 'title', page.lab_name | first %}
         {% if lab == nil %}
         {% assign lab = site.labs | where: 'short_name', page.lab_name | first %}
         {% endif %}
@@ -32,7 +33,7 @@
     </div>
     </div>
     </section>
-    
+
     {% include footer.html %}
     {% include js.html %}
 </body>

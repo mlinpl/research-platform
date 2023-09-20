@@ -3,7 +3,8 @@
 {% include head.html %}
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     {% include nav.html %}
-    
+    {% include page-header.html title = 'Laboratory' %}
+
     <section id="lab" class="container content-section">
         <div class="row">
         <div class="col-lg-12 col-md-12">
@@ -16,7 +17,7 @@
 
         {{ page.content | markdownify }}
 
-        {% assign filtered_projects_by_name = site.projects | where: 'lab_name', page.name %}
+        {% assign filtered_projects_by_name = site.projects | where: 'lab_name', page.title %}
         {% assign filtered_projects_by_short_name = site.projects | where: 'lab_name', page.short_name %}
         {% assign filtered_projects = (filtered_projects_by_name | concat: filtered_projects_by_short_name) %}
         {% if filtered_projects.size != 0 %}

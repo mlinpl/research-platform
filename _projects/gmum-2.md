@@ -1,5 +1,5 @@
 ---
-name: Differentiable splitting of batch
+title: Differentiable splitting of batch
 leader: Marcin Sendera, Tomasz Kuśmierczyk
 contact: marcin.sendera@gmail.com
 lab_name: GMUM

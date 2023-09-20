@@ -25,7 +25,7 @@ email: research@mlinpl.org
 main-image: images/mlinpl-research-platform.png
 twitter-username: "@MLinPL"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "research-platform.mlinpl.org" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://research-platform.mlinpl.org" # the base hostname & protocol for your site, e.g. http://example.com
 author:
   name: ML in PL Association
   url: https://mlinpl.org
@@ -35,7 +35,7 @@ author:
 inline-logo: '<span class="logo"><span class="main-name">ML in PL</span> <span class="sub-name">Research Platform</span></span>'
 header:
   heading: '<img src="images/mlinpl-research-platform.png" style="max-height: 1.5em; max-width: 90%;">'
-  subheading: 'Platform connecting <span class="emph"><i class="fa-solid fa-user-graduate"></i> students</span> with <span class="emph"><i class="fa-solid fa-flask"></i> research labs</span> '
+  subheading: 'Connecting <span class="emph"><i class="fa-solid fa-user-graduate"></i> students</span></br>with <span class="emph"><i class="fa-solid fa-flask"></i> research labs</span> '
 
 
 # Navigation settings

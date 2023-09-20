@@ -1,5 +1,5 @@
 ---
-name: Example project ML in PL
+title: Example project ML in PL
 leader: Samantha Williams
 contact: s.williams@el.com
 lab_name: Example Lab ML in PL
