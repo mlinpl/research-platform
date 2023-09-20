@@ -1,0 +1,65 @@
+{% comment %}
+Expects following parameters:
+    lab
+        .url
+        .name
+        .short_name
+        .content
+        .location
+    make_collapsable
+{% endcomment %}
+{% assign lab = include.lab %}
+{% assign make_collapsable = include.make_collapsable | default: false %}
+{% assign filtered_projects_by_name = site.projects | where: 'lab_name', lab.name %}
+{% assign filtered_projects_by_short_name = site.projects | where: 'lab_name', lab.short_name %}
+{% assign filtered_projects = (filtered_projects_by_name | concat: filtered_projects_by_short_name) %}
+    <div class="card">
+        <div class="card-header" id="lab-heading-{{forloop.index}}">
+            {% if make_collapsable == true %}
+            <button 
+                data-toggle="collapse" 
+                data-target="#lab-collapse-{{forloop.index}}" 
+                aria-expanded="true"
+                aria-controls="lab-collapse-{{forloop.index}}" 
+                style="text-align: left; background: transparent; outline: 0; border: 0px;"
+            >
+            {% endif %}
+
+            <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-12">
+                <h3>
+                    {% if lab.url and make_collapsable %}
+                    <a href="{{ lab.url | relative_url }}">{{ lab.name }}</a>
+                    {% else %}
+                    {{ lab.name }}
+                    {% endif %}
+                </h3>
+                <p class="card-info">
+                    <span class="card-property"><i class="fa-solid fa-location-dot"></i> Location: {{lab.location}}{% if lab.remote %} / remote {% endif %}</span>
+                    {% if lab.website_url %}
+                    <span class="card-property"><i class="fa-solid fa-globe"></i> Website: {{lab.website_url }}</span>
+                    {% endif %}
+                    {% if filtered_projects.size != 0 %}
+                    <span class="card-property"><i class="fa-solid fa-list"></i> Available projects: {{ filtered_projects | size }} </span>
+                    {% endif %}
+                </p>
+            </div>
+            <div class="col-lg-3 col-md-3 hidden-xs hidden-sm" style="text-align: right">
+                {% if lab.logo %}
+                <img src="{{ lab.logo | relative_url }}" alt="{{lab.name}} logo" class="width-100 width-max-100px">
+                {% endif %}
+            </div>
+            </div>
+            {% if make_collapsable == true %}
+            </button>
+            {% endif %}
+        </div>
+        {% if make_collapsable == true %}
+        <div id="lab-collapse-{{forloop.index}}" class="collapse show" aria-labelledby="lab-heading-{{forloop.index}}" style="height: 0px;" data-parent="#labs-accordion">
+            <div class="card-content">
+                {{ lab.content | markdownify }}
+                <a href="{{lab.url}}" class="btn btn-default btn-lg"><i class="fa-solid fa-file"></i> See lab's page</a>
+            </div>
+        </div>
+        {% endif %}
+    </div>

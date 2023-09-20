@@ -1,12 +1,19 @@
 <section id="projects" class="container content-section">
-    <h2>/ {{ site.projects | size }} projects available</h2>
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>/ Projects available: {{ site.projects | size }} </h2>
+        </div>
+    </div>
+
     {% assign projects_sorted = site.projects | sort: "created", "last" %}
-    <div id="accordion">
+    <div class="row">
+        <div id="project-accordion" class="col-lg-12">
         {% for project in projects_sorted reversed %}
         {% include research-platform/project-card.html
             project = project
             make_collapsable = true
         %}
         {% endfor %}
+        </div>
     </div>
 </section>
