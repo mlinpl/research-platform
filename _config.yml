@@ -46,8 +46,8 @@ navigation:
     url: "#projects"
   - name: "/ Labs"
     url: "#labs"
-  - name: "/ Tips"
-    url: "#tips"
+  - name: "/ Tips for students"
+    url: "#tips-for-students"
 
 collections:
   labs:
