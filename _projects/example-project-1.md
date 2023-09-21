@@ -1,14 +1,22 @@
 ---
-title: Example project ML in PL
-leader: Samantha Williams
-contact: s.williams@el.com
-lab_name: Example Lab ML in PL
-location: Warsaw
-remote: Yes
-funded: Yes
-hours: 20
+title: Extended Gaussian Processes in Meta-Learning (few-shot regression)
+leader: Marcin Sendera, Tomasz Kuśmierczyk
+contact: marcin.sendera@gmail.com
+positions:
+  - name: Data Engineer
+    description: We are looking for super data engineer
+    deadline: 24.03.2024
+  - name: Data Analyst
+    description: We are looking for super data analyst
+    deadline: 25.03.2024
+lab_name: Group of Machine Learning Research 2
+location: Poznań
+remote: no
+funding: yes
+weekly_hours: 10
+education_level: BSc - PhD student
 deadline: 25.03.2024
-created: 2021-02-23
+created: 2020-03-23
 ---
 
 The "Federated Learning for Privacy-Preserving Healthcare Analytics" project at the Advanced Machine Learning Lab aims

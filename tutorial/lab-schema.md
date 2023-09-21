@@ -3,7 +3,7 @@ name:
 short_name:
 head:
 contact:
-website_link:
+website_url:
 address:
 logo: 
 ---

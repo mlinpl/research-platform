@@ -1,0 +1,104 @@
+{% comment %}
+Expects following parameters:
+    project
+        .url
+        .name
+        .deadline
+        .contact
+        .leader
+        .lab_name
+        .positions
+        .content
+        .funding
+        .location
+        .weekly_hours
+        .education_level
+        .remote
+    make_collapsable
+{% endcomment %}
+
+{% assign project = include.project %}
+{% assign make_collapsable = include.make_collapsable | default: false %}
+{% assign lab = site.labs | where: 'short_name', project.lab_name | first %}
+{% if lab == nil %}
+    {% assign lab = site.labs | where: 'name', project.lab_name | first %}
+{% endif %}
+
+    <div class="card">
+        <div class="card-header" id="project-heading-{{forloop.index}}">
+            {% if make_collapsable == true %}
+            <button 
+                data-toggle="collapse" 
+                data-target="#project-collapse-{{forloop.index}}" 
+                aria-expanded="true"
+                aria-controls="project-collapse-{{forloop.index}}" 
+                style="text-align: left; background: transparent; outline: 0; border: 0px;"
+            >
+            {% endif %}
+
+            <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-12">
+                <h3>
+                    {% if project.url and make_collapsable %}
+                    <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+                    {% else %}
+                    {{ project.title }}
+                    {% endif %}
+                </h3>
+                <p class="card-info">
+                    {% if project.created %}
+                    <b>Created: </b>{{ project.created }},
+                    {% endif %}
+                    <b>Deadline: </b>{{ project.deadline }}
+                </p>
+    
+                <p class="card-info">
+                {% if project.positions %}
+                <b>Positions:</b>
+                {% for position in project.positions %}
+                <span class="comma">{{ position.name }}</span>
+                {% endfor %}
+                {% endif %}
+                </p>
+            </div>
+            <div class="col-lg-3 col-md-3 hidden-xs hidden-sm" style="text-align: right">
+                {% if lab %}
+                    <a href="{{ lab.url | relative_url }}">
+                    {% if lab.logo %}
+                    <img src="{{ lab.logo | relative_url }}" alt="{{lab.name}} logo" class="width-100 width-max-100px">
+                    {% else %}
+                    <h4><i class="fa-solid fa-flask"></i> {{ lab.name }} </h4>
+                    {% endif %}
+                    </a>
+                {% else %}
+                    <h4><i class="fa-solid fa-flask"></i> {{ project.lab_name }} </h4>
+                {% endif %}
+            </div>
+
+            <p class="card-info col-sm-12">
+                <span class="card-property"><i class="fa-solid fa-location-dot"></i> Location: {{project.location}}{% if project.remote %} / remote {% endif %}</span>
+                {% if project.funding %}
+                <span class="card-property"><i class="fa-solid fa-wallet"></i> Funding: {{project.funding }}</span>
+                {% endif %}
+                {% if project.weekly_hours %}
+                <span class="card-property"><i class="fa-solid fa-clock"></i> Weekly commitement: {{project.weekly_hours }}h </span>
+                {% endif %}
+                {% if project.education_level %}
+                <span class="card-property"><i class="fa-solid fa-user-graduate"></i> Education level: {{ project.education_level }} </span>
+                {% endif %}
+            </p>
+            </div>
+            {% if make_collapsable == true %}
+            </button>
+            {% endif %}
+        </div>
+        {% if make_collapsable == true %}
+        <div id="project-collapse-{{forloop.index}}" class="collapse show" aria-labelledby="project-heading-{{forloop.index}}" style="height: 0px;" data-parent="#projects-accordion">
+            <div class="card-content">
+                {{ project.content | markdownify }}
+                <p><i class="fa-solid fa-address-book"></i> Contact: {{ project.leader }} ({{ project.contact | replace: "@", " [ at ] " }})</p>
+                <a href="{{project.url}}" class="btn btn-default btn-lg"><i class="fa-solid fa-file"></i> See project's page</a>
+            </div>
+        </div>
+        {% endif %}
+    </div>

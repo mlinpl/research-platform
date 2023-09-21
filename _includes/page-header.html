@@ -1,11 +1,24 @@
+{% comment %}
+Expects following parameters:
+    title
+{% endcomment %}
+{% if include.title == nil %}
+    {% if page.html_title %}
+        {% assign title = page.html_title | trim %}
+    {% else %}
+        {% assign title = page.title | trim %}
+    {% endif %}
+{% else %}
+    {% assign title = include.title %}
+{% endif %}
 <!-- Standard page header -->
 <header class="intro page-intro">
     <canvas id="intro-background" class="intro-background"></canvas>
     <div class="intro-body">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h1 class="page-heading">{{ page.title | escape }}</h1>
+                <div class="col-md-8 event-headings">
+                    <h1 class="page-heading">{{ title }}</h1>
                 </div>
             </div>
         </div>

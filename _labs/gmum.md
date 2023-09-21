@@ -1,11 +1,11 @@
 ---
-short_name: Example Lab
-title: Example Lab ML in PL
+short_name: GMUM
+title: Group of Machine Learning Research
 head: Samantha Williams
 contact: s.williams@el.com
-logo: ./lab-logo/example.jpg
-website_url: https://conference2023.mlinpl.org/
-address: mlinpl, Poland
+logo: ./lab-logo/gmum.png
+website_url: https://gmum.net/
+location: Cracow, Poland
 ---
 
 Our Machine Learning Lab is at the forefront of cutting-edge research and innovation in the field of artificial

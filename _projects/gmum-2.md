@@ -1,20 +1,15 @@
 ---
-name: Example project ML in PL
-leader: Samantha Williams
-contact: s.williams@el.com
-positions:
-  - name: Data Engineer
-    description: We are looking for super data engineer
-    deadline: 24.03.2024
-  - name: Data Analyst
-    description: We are looking for super data analyst
-    deadline: 25.03.2024
-lab_name: Example Lab ML in PL
-location: Poznań
-remote: No
-funded: No
-hours: 10
-deadline: 25.03.2024
+title: Differentiable splitting of batch
+leader: Marcin Sendera, Tomasz Kuśmierczyk
+contact: marcin.sendera@gmail.com
+lab_name: GMUM
+location: Cracow, Poland
+remote: no
+funding: no
+weekly_hours: 10
+education_level: MSc student
+created: 2021-03-23
+deadline: 2023-12-23
 ---
 
 The "Federated Learning for Privacy-Preserving Healthcare Analytics" project at the Advanced Machine Learning Lab aims

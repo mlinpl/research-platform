@@ -48,6 +48,7 @@
 }
 
 .page-heading {
+    text-align: left;
     font-weight: bold; 
     font-size: 34px;
 }
@@ -358,17 +359,30 @@ ol > li > ol > li > ol > li:before {
     }
 }
 
+
 .intro, .page-intro {
     display: table;
     width: 100%;
-    height: 400px;
     /* padding: 50px 0; */
-    margin-bottom: -150px;
+    margin-bottom: -125px;
     text-align: center;
     color: #000;
     background-color: {{ site.color.background }};
     background-size: cover;
     position: relative;
+}
+
+.intro {
+    height: 400px;
+}
+
+.page-intro {
+    height: 250px;
+}
+
+.page-intro h1 {
+    margin-top: 25px;
+    margin-bottom: 0;
 }
 
 .intro .intro-body {
@@ -378,7 +392,6 @@ ol > li > ol > li > ol > li:before {
     /* background: radial-gradient(farthest-side at 50% 75%, rgb(255, 255, 255, 1) 50%, rgba(255,255,255,0) 100%); */
     position: relative;
     box-shadow: inset 0px 0px 25px 25px #fff;
-    height: 400px;
 }
 
 .intro .intro-body .brand-heading {
@@ -959,6 +972,26 @@ body {
     animation-fill-mode: forwards;
 }
 
+.card-header {
+
+}
+
+.card-content {
+    border-top: 1px solid #ccc;
+    padding-top: 30px;
+}
+
+.card-info {
+    margin-bottom: 5px;
+}
+
+.card-property {
+    font-size: 0.8em;
+    display: inline-block;
+    white-space: nowrap;
+    padding-right: 30px;
+}
+
 
 .research-about-images {
     margin-top: 50px;
@@ -972,13 +1005,6 @@ body {
     margin-top: -20px;
     margin-left: -15px;
 }
-
-.research-project-body {
-    margin-top: -20px;
-}
-
-
-
 
 @media (min-width: 992px) {
     .research-project-content {
@@ -1134,4 +1160,27 @@ body {
 
 .comma:not(:empty):not(:last-child):after {
     content: ", ";
+}
+
+.search-bar {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin-top: 60px;
+    margin-bottom: 35px;
+}
+
+.search-bar input, .search-bar .input-group-addon {
+    /* border: 2px solid {{ site.color.second }}; */
+    font-size: 24px !important;
+    border-radius: 0 !important;
+}
+
+.search-bar .input-group-addon {
+    padding: 0 15px !important;
+}
+
+.search-bar input:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: {{ site.color.main }};
 }

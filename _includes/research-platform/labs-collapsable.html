@@ -1,0 +1,19 @@
+<section id="labs" class="container content-section">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>/ Laboratories with projects: {{ site.labs | size }}</h2>
+        </div>
+    </div>
+
+    {% assign labs_sorted = site.labs | sort: "name", "last" %}
+    <div class="row">
+        <div id="labs-accordion" class="col-lg-12">
+        {% for lab in labs_sorted %}
+        {% include research-platform/lab-card.html
+            lab = lab
+            make_collapsable = true
+        %}
+        {% endfor %}
+        </div>
+    </div>
+</section>
