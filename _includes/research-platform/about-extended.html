@@ -175,7 +175,7 @@
 
         var marker = L.marker(group.coordinates, { icon: researchGroupIcon }).addTo(map);
         var popupContent = `<b><a href="${group.link}" target="_blank">${group.name}</a></b><br>${group.description}`;
-        marker.bindPopup(popupContent).openPopup();
+        marker.bindPopup(popupContent);
     });
 
 </script>
