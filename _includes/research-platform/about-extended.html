@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 <section class="container content-section">
     <div class="row">
         <div class="col-xs-12">
@@ -151,23 +153,29 @@
             coordinates: [52.2297, 21.0122],
             name: 'Example Lab ML in PL',
             description: 'Head: Samantha Williams',
-            link: '{{ "./labs/example-lab" | relative_url }}',
-            iconUrl: '{{ "./lab-logo/example.jpg" | relative_url }}'
+            link: '{{ "./labs/example-lab" | relative_url }}'
         },
+
+        {
+            coordinates: [46.5191, 6.5668],
+            name: 'Laboratory of Computational Neuro-Oncology',
+            description: 'Head: Sebastian Waszak',
+            link: '{{ "./labs/lab_of_cno" | relative_url }}'
+        }
     ];
 
     researchGroups.forEach(function(group) {
         var researchGroupIcon = L.divIcon({
             className: 'custom-icon',
-            html: `<img src="${group.iconUrl}" style="border: 2px solid #e7322a; width: 30px; height: 30px;" />`,
-            iconSize: [40, 40],
+            html: `<i class="fas fa-map-pin" style="font-size:24px;color:#e7322a;"></i>`,
+            iconSize: [30, 30],
             iconAnchor: [15, 15],
             popupAnchor: [0, -15]
         });
 
         var marker = L.marker(group.coordinates, { icon: researchGroupIcon }).addTo(map);
         var popupContent = `<b><a href="${group.link}" target="_blank">${group.name}</a></b><br>${group.description}`;
-        marker.bindPopup(popupContent).openPopup();
+        marker.bindPopup(popupContent);
     });
 
 </script>
