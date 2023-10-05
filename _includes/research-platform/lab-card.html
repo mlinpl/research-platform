@@ -47,7 +47,17 @@ Expects following parameters:
                 <p class="card-info">
                     <span class="card-property"><i class="fa-solid fa-location-dot"></i> Location: {{lab.location}}{% if lab.remote %} / remote {% endif %}</span>
                     {% if lab.website_url %}
-                    <span class="card-property"><i class="fa-solid fa-globe"></i> Website: <a href="{{lab.website_url }}">{{lab.website_url }}</a></span>
+                    {% assign url = lab.website_url %}
+                    {% assign check = url | split: '://' %}
+                    
+                    {% if check[0] == 'http' or check[0] == 'https' %}
+                        {% assign show_url = check[1] %}
+                    {% else %}
+                        {% assign show_url = url %}
+                        {% assign url = 'https://' | append: lab.website_url %}
+                    {% endif %}
+                    
+                    <span class="card-property"><i class="fa-solid fa-globe"></i> Website: <a href="{{ url }}">{{ show_url }}</a></span>
                     {% endif %}
                     {% if filtered_projects.size != 0 %}
                     <span class="card-property"><i class="fa-solid fa-list"></i> Available projects: {{ filtered_projects | size }} </span>
