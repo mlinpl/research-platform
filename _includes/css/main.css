@@ -972,8 +972,8 @@ body {
     animation-fill-mode: forwards;
 }
 
-.card-header {
-
+.card-header h3 {
+    margin-bottom: 15px;
 }
 
 .card-content {
@@ -990,6 +990,11 @@ body {
     display: inline-block;
     white-space: nowrap;
     padding-right: 30px;
+}
+
+.card-property i {
+    width: 2rem;
+    text-align: center;
 }
 
 

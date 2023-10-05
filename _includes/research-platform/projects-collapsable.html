@@ -17,7 +17,7 @@
                 <input type="text" id="search" class="form-control" placeholder="Search for projects using keywords..." aria-describedby="sizing-addon1">
             </div>
 
-            <h2>/ Projects available: {{ site.projects | size }} </h2>
+            <h2>/ Projects available: <span id="projects-found">{{ site.projects | size }}</span></h2>
         </div>
     </div>
 
