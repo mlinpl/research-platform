@@ -15,16 +15,22 @@ Expects following parameters:
         .education_level
         .remote
     make_collapsable
+    make_invisible
 {% endcomment %}
 
 {% assign project = include.project %}
 {% assign make_collapsable = include.make_collapsable | default: false %}
+{% assign make_invisible = include.make_invisible | default: false %}
 {% assign lab = site.labs | where: 'short_name', project.lab_name | first %}
 {% if lab == nil %}
     {% assign lab = site.labs | where: 'name', project.lab_name | first %}
 {% endif %}
 
-    <div class="card project-card">
+    {% if make_invisible == true %}
+        <div class="card project-card search-match" style="display: none;">
+    {% else %}
+        <div class="card project-card search-match">
+    {% endif %}
         <div class="card-header" id="project-heading-{{forloop.index}}">
             {% if make_collapsable == true %}
             <button 
@@ -32,11 +38,24 @@ Expects following parameters:
                 data-target="#project-collapse-{{forloop.index}}" 
                 aria-expanded="true"
                 aria-controls="project-collapse-{{forloop.index}}" 
-                style="text-align: left; background: transparent; outline: 0; border: 0px;"
+                style="text-align: left; background: transparent; outline: 0; border: 0px; width: 100%;"
             >
             {% endif %}
 
             <div class="row">
+                <div class="hidden-lg hidden-md col-sm-12">
+                    {% if lab %}
+                        <a href="{{ lab.url | relative_url }}">
+                        {% if lab.logo %}
+                        <img src="{{ lab.logo | relative_url }}" alt="{{lab.name}} logo" class="width-100 width-max-100px lab-logo">
+                        {% else %}
+                        <h3><i class="fa-solid fa-flask"></i> {{ lab.name }} </h3>
+                        {% endif %}
+                        </a>
+                    {% else %}
+                        <h3><i class="fa-solid fa-flask"></i> {{ project.lab_name }} </h3>
+                    {% endif %}
+                </div>
                 <div class="col-lg-9 col-md-9 col-sm-12">
                     <h3>
                         {% if project.url and make_collapsable %}
@@ -68,13 +87,13 @@ Expects following parameters:
                     {% if lab %}
                         <a href="{{ lab.url | relative_url }}">
                         {% if lab.logo %}
-                        <img src="{{ lab.logo | relative_url }}" alt="{{lab.name}} logo" class="width-100 width-max-100px">
+                        <img src="{{ lab.logo | relative_url }}" alt="{{lab.name}} logo" class="width-100 width-max-100px lab-logo">
                         {% else %}
-                        <h4><i class="fa-solid fa-flask"></i> {{ lab.name }} </h4>
+                        <h3><i class="fa-solid fa-flask"></i> {{ lab.name }} </h3>
                         {% endif %}
                         </a>
                     {% else %}
-                        <h4><i class="fa-solid fa-flask"></i> {{ project.lab_name }} </h4>
+                        <h3><i class="fa-solid fa-flask"></i> {{ project.lab_name }} </h3>
                     {% endif %}
                 </div>
 
@@ -100,7 +119,7 @@ Expects following parameters:
             <div class="card-content">
                 {{ project.content | markdownify }}
                 <p><i class="fa-solid fa-address-book"></i> Contact: {{ project.leader }} ({{ project.contact | replace: "@", " [ at ] " }})</p>
-                <a href="{{project.url}}" class="btn btn-default btn-lg"><i class="fa-solid fa-file"></i> See project's page</a>
+                <a href="{{project.url}}" class="btn btn-default"><i class="fa-solid fa-file"></i> See project's page</a>
             </div>
         </div>
         {% endif %}

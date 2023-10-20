@@ -170,7 +170,7 @@ function draw(){
     // Draw right, croped
     let imgH = imgMap.height,
         imgW = imgMap.width,
-        ratio = width / 2 / imgMap.width,
+        ratio = Math.max(width / 2 / imgW, height / imgH),
         drawImgH = imgH * ratio,
         drawImgW = imgW * ratio;
     

@@ -988,7 +988,7 @@ body {
 .card-property {
     font-size: 0.8em;
     display: inline-block;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     padding-right: 30px;
 }
 
@@ -1116,8 +1116,7 @@ body {
     transition: 0.3s;
     padding: 30px;
     margin-bottom: 30px
-
-  }
+}
 
 .card:hover {
     /* Add shadows to create the "card" effect */
@@ -1126,7 +1125,12 @@ body {
     padding: 30px;
     margin-bottom: 30px;
     background-color: rgb(245, 245, 245);
-  }
+}
+
+.lab-logo{
+    margin: 0 auto 25px auto;
+}
+
 
 .research-lab-entry {
     margin-bottom: -30px; 
