@@ -138,10 +138,10 @@ function drawParticles(ctx, particles){
 }
 
 var imgMap = new Image;
-imgMap.src = "{{ site.url }}/images/misc/countries-of-europe.png";
+imgMap.src = "{{ site.url }}/assets/misc/countries-of-europe.png";
 
 var imgMapStroke = new Image;
-imgMapStroke.src = "{{ site.url }}/images/misc/countries-of-europe-stroke.png";
+imgMapStroke.src = "{{ site.url }}/assets/misc/countries-of-europe-stroke.png";
 
 function createOffscreenCanvas(width, height){
     let canvas = document.createElement('canvas');

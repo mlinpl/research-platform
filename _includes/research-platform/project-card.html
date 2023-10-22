@@ -47,7 +47,7 @@ Expects following parameters:
                     {% if lab %}
                         <a href="{{ lab.url | relative_url }}">
                         {% if lab.logo %}
-                        <img src="{{ lab.logo | relative_url }}" alt="{{lab.name}} logo" class="width-100 width-max-100px lab-logo">
+                        <img src="{{ lab.logo | relative_url }}" alt="{{lab.name}} logo" class="width-max-100 height-max-150px lab-logo">
                         {% else %}
                         <h3><i class="fa-solid fa-flask"></i> {{ lab.name }} </h3>
                         {% endif %}
@@ -87,7 +87,7 @@ Expects following parameters:
                     {% if lab %}
                         <a href="{{ lab.url | relative_url }}">
                         {% if lab.logo %}
-                        <img src="{{ lab.logo | relative_url }}" alt="{{lab.name}} logo" class="width-100 width-max-100px lab-logo">
+                        <img src="{{ lab.logo | relative_url }}" alt="{{lab.name}} logo" class="width-max-100 height-max-150px lab-logo">
                         {% else %}
                         <h3><i class="fa-solid fa-flask"></i> {{ lab.name }} </h3>
                         {% endif %}

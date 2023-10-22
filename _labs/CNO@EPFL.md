@@ -1,9 +1,9 @@
 ---
-short_name: Laboratory of Computational Neuro-Oncology
+short_name: CNO@EPFL
 title: Laboratory of Computational Neuro-Oncology at the École Polytechnique Fédérale de Lausanne (EPFL)
 head: Sebastian Waszak
 contact: sebastian.waszak@epfl.ch
-logo: ./lab-logo/logo-epfl.png
+logo: ./lab-logos/epfl.png
 website_url: waszaklab.org
 location: Lausanne, Switzerland
 ---

@@ -22,7 +22,7 @@
 # Head settings
 title: ML in PL Research Platform
 email: research@mlinpl.org
-main-image: images/mlinpl-research-platform.png
+main-image: assets/mlinpl-research-platform.png
 twitter-username: "@MLinPL"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://research-platform.mlinpl.org" # the base hostname & protocol for your site, e.g. http://example.com
@@ -34,7 +34,7 @@ author:
 # Header settings
 inline-logo: '<span class="logo"><span class="main-name">ML in PL</span> <span class="sub-name">Research Platform</span></span>'
 header:
-  heading: '<img src="images/mlinpl-research-platform.png" style="max-height: 1.5em; max-width: 90%;">'
+  heading: '<img src="assets/mlinpl-research-platform.png" style="max-height: 1.5em; max-width: 90%;">'
   subheading: 'Connecting <span class="emph"><i class="fa-solid fa-user-graduate"></i> students</span></br>with <span class="emph"><i class="fa-solid fa-flask"></i> research labs</span> '
 
 
@@ -60,7 +60,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /images/mlinpl-conference-2023-event-banner.jpg
+      image: /assets/mlinpl-conference-2023-event-banner.jpg
   - scope:
       path: ""
       type: "labs"

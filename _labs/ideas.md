@@ -3,7 +3,7 @@ short_name: IDEAS
 title: IDEAS NCBR
 head: Piotr Sankowski, Stefan Dziembowski, Tomasz Trzciński, Przemysław Musialski, Paweł Wawrzyński, Krzysztof Stereńczak, Krzysztof Walas
 contact: phd@ideas-ncbr.pl
-logo: ./lab-logo/ideas.png
+logo: ./lab-logos/ideas.png
 website_url: https://ideas-ncbr.pl
 location: Warsaw, Poland
 ---

@@ -1,5 +1,5 @@
 ---
-short_name: RLG
+short_name: RLG@MIM
 title: Robot learning group
 head: Marek Cygan
 contact: cygan@mimuw.edu.pl

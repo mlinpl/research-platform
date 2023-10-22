@@ -1,7 +1,7 @@
 ---
 short_name: ML in PL
 title: ML in PL Association
-logo: ./lab-logo/mlinpl.png
+logo: ./lab-logos/mlinpl.png
 website_url: "https://mlinpl.org"
 location: Poland
 ---

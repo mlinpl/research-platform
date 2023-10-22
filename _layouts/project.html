@@ -17,6 +17,8 @@
         
         {{ page.content | markdownify }}
 
+        <p><i class="fa-solid fa-address-book"></i> Contact: {{ page..leader }} ({{ page.contact | replace: "@", " [ at ] " }})</p>
+
         {% assign lab = site.labs | where: 'title', page.lab_name | first %}
         {% if lab == nil %}
         {% assign lab = site.labs | where: 'short_name', page.lab_name | first %}
