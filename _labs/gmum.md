@@ -2,7 +2,7 @@
 short_name: GMUM
 title: Group of Machine Learning Research
 head: prof. Jacek Tabor
-logo: ./lab-logo/gmum.png  
+logo: ./lab-logos/gmum.png  
 website_url: gmum.net
 location: Kraków, Poland
 ---

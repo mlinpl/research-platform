@@ -36,9 +36,9 @@ Expects following parameters:
             {% endif %}
 
             <div class="row">
-                <div class="hidden-lg hidden-md col-sm-12 col-xs-12">
+                <div class="hidden-lg hidden-md col-sm-12 col-xs-12" style="text-align: center;">
                     {% if lab.logo %}
-                    <img src="{{ lab.logo | relative_url }}" alt="{{lab.name}} logo" class="width-100 width-max-100px lab-logo">
+                    <img src="{{ lab.logo | relative_url }}" alt="{{lab.name}} logo" class="width-max-100 height-max-150px lab-logo">
                     {% endif %}
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-12">
@@ -69,9 +69,9 @@ Expects following parameters:
                         {% endif %}
                     </p>
                 </div>
-                <div class="col-lg-3 col-md-3 hidden-sm hidden-xs" style="text-align: right">
+                <div class="col-lg-3 col-md-3 hidden-sm hidden-xs" style="text-align: center;">
                     {% if lab.logo %}
-                    <img src="{{ lab.logo | relative_url }}" alt="{{lab.name}} logo" class="width-100 width-max-100px lab-logo">
+                    <img src="{{ lab.logo | relative_url }}" alt="{{lab.name}} logo" class="width-max-100 height-max-150px">
                     {% endif %}
                 </div>
             </div>

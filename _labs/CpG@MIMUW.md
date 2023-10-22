@@ -1,9 +1,9 @@
 ---
-short_name: CpG@MIM
+short_name: CpG@MIMUW
 title: Computational proteomics and genomics group
 head: Anna Gambin
 contact: a.gambin@uw.edu.pl
-logo: ./lab-logo/CpG_small.jpeg
+logo: ./lab-logos/CpGMIM.jpeg
 location: Faculty of Mathematics, Informatics and Mechanics, University of Warsaw
 ---
 

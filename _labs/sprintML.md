@@ -3,7 +3,7 @@ short_name: SprintML
 title: SprintML
 head: Adam Dziedzic and Franziska Boenisch
 contact: adam.dziedzic@sprintml.com
-logo: ./lab-logo/sprintML.png
+logo: ./lab-logos/sprintML.png
 website_url: https://sprintml.com
 location: Saarbrücken, Germany
 ---
