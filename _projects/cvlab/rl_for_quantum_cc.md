@@ -5,6 +5,7 @@ contact: mm.ostaszewski@gmail.com
 positions:
     - name: Master's Candidate
 lab_name: CVLab
+location: Warsaw University of Technology, Poland
 created: 2023-10-22
 ---
 

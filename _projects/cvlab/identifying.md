@@ -5,6 +5,7 @@ contact: konrad.cop.dokt@pw.edu.pl
 positions:
     - name: Master's Candidate
 lab_name: CVLab
+location: Warsaw University of Technology, Poland
 created: 2023-10-22
 ---
 
