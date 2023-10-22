@@ -3,7 +3,7 @@ short_name: UniverseTBD
 title: UniverseTBD
 head: dr Ioana Ciucă
 contact: maja.jablonska@anu.edu.au
-logo: ./lab-logos/UniverseTBD.png
+logo: ./lab-logos/universeTBD.png
 website_url: universetbd.org
 location: ANU, Canberra, AU / Remote
 ---
