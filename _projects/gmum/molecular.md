@@ -6,6 +6,7 @@ positions:
     - name: Student Researcher
 lab_name: GMUM
 created: 2023-10-22
+location: Poland
 ---
 
 In the project, we aim to build models that allow for generating chemical molecules. Specifically, we want the generated molecules to satisfy certain conditions, such as activity, solubility, the number of rings, etc.

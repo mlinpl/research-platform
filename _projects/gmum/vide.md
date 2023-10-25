@@ -6,6 +6,7 @@ positions:
     - name: Student Researcher
 lab_name: GMUM
 created: 2023-10-22
+location: Poland
 ---
 
 This project is centered around representing sound using a network.

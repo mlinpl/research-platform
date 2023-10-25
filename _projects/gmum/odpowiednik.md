@@ -6,6 +6,7 @@ positions:
     - name: Student Researcher
 lab_name: GMUM
 created: 2023-10-22
+location: Poland
 ---
 
 Interpretation of the last convolutional layer in convolutional models. We want to create a segmentation model that is interpretable similarly to GradCam, but one that possesses information allowing for correct classification.

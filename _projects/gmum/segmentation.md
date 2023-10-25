@@ -6,6 +6,7 @@ positions:
     - name: Student Researcher
 lab_name: GMUM
 created: 2023-10-22
+location: Poland
 ---
 
 What if not all objects on single sample are labeled? Can we develop method for learnig deep models in such case?

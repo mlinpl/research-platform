@@ -7,6 +7,7 @@ positions:
 lab_name: BioMedIA
 deadline: 2024-03-31
 created: 2023-12-31
+location: United Kingdom
 ---
 
 Most machine learning methodologies require large datasets with high-quality labelling to effectively train and validate the developed models. However, as medical imaging repositories used for population health studies, such as the UK Biobank, continue to grow, the conventional manual annotation approaches by experts become impractical. On the other hand, the labelling process can be automated by extracting annotations from associated metadata or reports. In such scenarios, automated labelling can introduce errors due to ambiguities in the reports, resulting in large but noisy-labelled (or even mislabelled) datasets. Consequently, this can lead to poorer generalization or replicate human biases present in the data. The primary objective of this project is to investigate machine learning strategies that can guide optimal annotation techniques to achieve high accuracy while mitigating biases in the developed model.

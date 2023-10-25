@@ -6,6 +6,7 @@ positions:
     - name: Student Researcher
 lab_name: GMUM
 created: 2023-10-22
+location: Poland
 ---
 
 We are looking to extend our Continual World benchmark: [https://arxiv.org/abs/2105.10919](https://arxiv.org/abs/2105.10919) in various ways, such as learning from pixels, implementing new RL algorithms, implementing new continual learning methods, exploring sparse rewards setting.

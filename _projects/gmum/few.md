@@ -6,6 +6,7 @@ positions:
     - name: Student Researcher
 lab_name: GMUM
 created: 2023-10-22
+location: Poland
 ---
 
 Few-shot learning (FSL), also referred to as low-shot learning (LSL) in few sources, is a type of machine learning problems where the training dataset contains limited information. Few-shot learning aims for Deep learning models to predict the correct class of instances when a small amount of examples are available in the training dataset.
