@@ -6,6 +6,7 @@ positions:
     - name: Student Researcher
 lab_name: GMUM
 created: 2023-10-22
+location: Poland
 ---
 
 The aim of this project is to utilize the Normalizing Flows and other Generative models for architectures used for very large Meta-Learning datasets.

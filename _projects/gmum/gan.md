@@ -1,11 +1,12 @@
 ---
 title: GAN + NeRF
-leader: Przemys�aw Spurek
+leader: Przemysław Spurek
 contact: przemyslaw.spurek@uj.edu.pl.
 positions:
     - name: Student Researcher
 lab_name: GMUM
 created: 2023-10-22
+location: Poland
 ---
 
 In the project we will use GAN for generating NeRF reprezentaions NeRF [https://www.matthewtancik.com/nerf](https://www.matthewtancik.com/nerf)

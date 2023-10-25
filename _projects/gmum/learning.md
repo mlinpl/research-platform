@@ -6,6 +6,7 @@ positions:
     - name: Student Researcher
 lab_name: GMUM
 created: 2023-10-22
+location: Poland
 ---
 
 Neural networks achieve very good results in popular domains such as images or texts. However, for tabular data, which does not possess a local structure, shallow methods like random forest or XGBoost often achieve better results. The goal is to develop neural network models that can be successfully applied to tabular data.

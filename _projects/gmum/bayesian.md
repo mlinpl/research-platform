@@ -6,6 +6,7 @@ positions:
     - name: Student Researcher
 lab_name: GMUM
 created: 2023-10-22
+location: Poland
 ---
 
 Recently my academic focus is on continual learning. I am interested in Bayesian learning, optimization. Any reasonable combination (potentially with generative modelling) would be a fantastic project for me. If you don't have any particular ideas, I do have something to offer!

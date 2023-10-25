@@ -6,6 +6,7 @@ positions:
     - name: Student Researcher
 lab_name: GMUM
 created: 2023-10-22
+location: Poland
 ---
 
 Based on an interpretable backbone [either b-cos or prototypes]. We have a proposed tree model that allows for storing the structure of non-binary trees.

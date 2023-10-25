@@ -6,6 +6,7 @@ positions:
     - name: Student Researcher
 lab_name: GMUM
 created: 2023-10-22
+location: Poland
 ---
 
 Neural networks achieve very good results in typical classification and clustering tasks. However, the interpretation of the obtained results is limited. In this project, we aim to focus on constructing deep models that make predictions by undertaking a sequence of decisions. 

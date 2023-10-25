@@ -10,7 +10,7 @@ deadline: 2024-03-31
 created: 2023-10-23
 ---
 
-The team develops neural networks that generate graphs. These solutions are oriented towards the automatic design of structures naturally represented by graphs, such as molecules or energy networks. Known methods for generating graphs are based on an assumed limitation on the size of the graph and are thus not scalable. How to generate arbitrarily large graphs that meet set functional requirements? We are developing methods that address this challenge. https://ideas-ncbr.pl/en/badania/learning-in-control-graphs-and-networks/
+The team develops neural networks that generate graphs. These solutions are oriented towards the automatic design of structures naturally represented by graphs, such as molecules or energy networks. Known methods for generating graphs are based on an assumed limitation on the size of the graph and are thus not scalable. How to generate arbitrarily large graphs that meet set functional requirements? We are developing methods that address this challenge. [https://ideas-ncbr.pl/en/badania/learning-in-control-graphs-and-networks/](https://ideas-ncbr.pl/en/badania/learning-in-control-graphs-and-networks/)
 
 ## PhD Candidate
 
