@@ -5,7 +5,7 @@ contact: bartlomiej.papiez@bdi.ox.ac.uk
 positions:
     - name: Student researcher
 lab_name: BioMedIA
-deadline: 2024-03-31
+deadline: 2023-12-31
 created: 2023-12-31
 location: United Kingdom
 ---
@@ -20,8 +20,5 @@ The student will be expected to attend relevant seminars within the department a
 
 ### Nice-to-have requiremets 
 
-We would be pleased to see in your application: experience in implementing robotic solutions experience in efficient methods of machine learning, senor data processing, robot control references with min. 1 contact to person, who can recommend you.
-
-## PostDoc
-
 The ideal student would have: a degree in computer science, statistics, engineering or a related discipline strong programming skills (preferable Python, or Matlab/C++ and willing to learn Python) experience or interest in machine learning (Deep Learning) and medical image analysis experience or enthusiasm to work on clinically relevant problems.
+
