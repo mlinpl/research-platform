@@ -6,7 +6,7 @@ positions:
     - name: Student researcher
 lab_name: BioMedIA
 deadline: 2023-12-31
-created: 2023-12-31
+created: 2023-10-23
 location: United Kingdom
 ---
 
