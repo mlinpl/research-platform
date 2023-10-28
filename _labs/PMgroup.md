@@ -3,7 +3,6 @@ short_name: PM-group
 title: Piotr Milos's group
 head: Piotr Milos
 contact: pmilos@mimuw.edu.pl
-logo: ./lab-logos/universeTBD.png
 website_url: www.mimuw.edu.pl/~pmilos
 location: IDEAS NCBR, Warsaw, Poland
 ---
