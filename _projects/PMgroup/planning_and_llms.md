@@ -1,7 +1,7 @@
 ---
 title: Planning and LLMs
 leader: Piotr Milos
-contact: bartlomiej.papiez@bdi.ox.ac.uk
+contact: pmilos@mimuw.edu.pl
 positions:
     - name: Master student
 lab_name: PM-group
